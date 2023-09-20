@@ -17,4 +17,4 @@
 x = int(input())
 y = int(input())
 
-print((1 << x) + (1 << y))
+print((1 << x) | (1 << y))
