@@ -17,4 +17,12 @@
 
 num = int(input())
 
-print(int(f"{num:06d}" == f"{num:06d}"[::-1]))
+second_part = num % 1000
+
+figure_1 = num % 1000000 // 100000
+figure_2 = num % 100000 // 10000
+figure_3 = num % 10000 // 1000
+
+first_part = figure_3 * 100 + figure_2 * 10 + figure_1
+
+print(min(first_part, second_part) // max(second_part, first_part))
