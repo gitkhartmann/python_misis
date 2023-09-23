@@ -17,14 +17,14 @@
 
 num = int(input())
 
-figure_1 = num // 100000
-figure_2 = (num - figure_1 * 100000) // 10000
-figure_3 = (num - (figure_1 * 100000) - (figure_2 * 10000)) // 1000
-figure_4 = (num - (figure_1 * 100000) - (figure_2 * 10000) - (figure_3 * 1000)) // 100
-figure_5 = (num - (figure_1 * 100000) - (figure_2 * 10000) - (figure_3 * 1000) - (figure_4 * 100)) // 10
-figure_6 = (num - (figure_1 * 100000) - (figure_2 * 10000) - (figure_3 * 1000) - (figure_4 * 100) - (figure_5 * 10))
+figure_1 = num % 1000000 // 100000
+figure_2 = num % 100000 // 10000
+figure_3 = num % 10000 // 1000
+figure_4 = num % 1000 // 100
+figure_5 = num % 100 // 10
+figure_6 = num % 10
 
-even_nums = int(str(figure_6) + str(figure_4) + str(figure_2))
-odd_nums = int(str(figure_1) + str(figure_3) + str(figure_5))
+even_nums = figure_6 * 100 + figure_4 * 10 + figure_2
+odd_nums = figure_1 * 100 + figure_3 * 10 + figure_5
 
 print(even_nums, odd_nums, even_nums * odd_nums, sep='#')
