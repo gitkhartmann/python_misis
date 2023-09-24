@@ -53,6 +53,7 @@ col_1 = int(input())
 row_2 = int(input())
 col_2 = int(input())
 
+is_not_change_position = row_1 == row_2 and col_1 == col_2
 is_change_position_rook = (row_1 != row_2 and col_2 == col_1) or (row_1 == row_2 and col_2 != col_1)
 is_change_position_horse = ((row_1 + 1 == row_2 and col_1 + 2 == col_2) or
                             ((row_1 - 1 >= 0 and row_1 - 1 == row_2) and col_1 + 2 == col_2) or
@@ -60,17 +61,17 @@ is_change_position_horse = ((row_1 + 1 == row_2 and col_1 + 2 == col_2) or
                             ((row_1 - 1 >= 0 and row_1 - 1 == row_2) and (col_1 - 2 >= 0 and col_1 - 2 == col_2)))
 is_change_position_elephant = abs(row_1 - row_2) == abs(col_1 - col_2)
 
-if is_change_position_rook:
-    print('ЛАДЬЯ может совершить такой ход')
+if is_change_position_rook and not is_not_change_position:
+    print('Ладья может совершить такой ход')
 else:
-    print('ЛАДЬЯ не может совершить такой ход')
+    print('Ладья не может совершить такой ход')
 
-if is_change_position_elephant:
-    print('СЛОН может совершить такой ход')
+if is_change_position_elephant and not is_not_change_position:
+    print('Слон может совершить такой ход')
 else:
-    print('СЛОН не может совершить такой ход')
+    print('Слон не может совершить такой ход')
 
-if is_change_position_horse:
-    print('КОНЬ может совершить такой ход')
+if is_change_position_horse and not is_not_change_position:
+    print('Конь может совершить такой ход')
 else:
-    print('КОНЬ не может совершить такой ход')
+    print('Конь не может совершить такой ход')
