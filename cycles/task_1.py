@@ -44,9 +44,9 @@ while a != 0 and b != 0:
 
     if c == 0:
         if max_2 and min_2:
-            print(max_2, min_2)
+            print(min_2, max_2)
         else:
-            print(max_1, min_1)
+            print(min_1, max_1)
         break
 
     if c > max_1:
