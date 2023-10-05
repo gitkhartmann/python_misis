@@ -38,9 +38,8 @@
 
 password = input()
 
-if (len(password) >= 10 and password.isalnum() and password.lower() != password and
-        password.upper() != password and len(
-            password.split()) == 1 and len(set(password)) == len(password)):
+if (len(password) >= 10 and not password.isalpha() and not password.isdigit() and password.lower() != password and
+        password.upper() != password and len(password.split()) == 1 and len(set(password)) == len(password)):
     print('Вы ввели допустимый пароль')
 else:
     print('Вы ввели недопустимый пароль')
