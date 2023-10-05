@@ -24,15 +24,15 @@ result = ''
 first_row = ''.ljust(7, ' ')
 
 for i in range(x1, x2 + 1):
-    first_row = first_row + str(i).ljust(7, ' ')
+    first_row = first_row + f'{i:>7}'
 
 result = result + first_row + '\n'
 
 for i in range(y1, y2 + 1):
     new_arr = ''
-    new_arr = new_arr + str(i).ljust(7, ' ')
+    new_arr = new_arr + f'{i:>7}'
     for j in range(x1, x2 + 1):
-        new_arr = new_arr + str(j * i).ljust(7, ' ')
+        new_arr = new_arr + f'{j * i:>7}'
 
     result = result + new_arr + '\n'
 
