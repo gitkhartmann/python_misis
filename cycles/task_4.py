@@ -33,18 +33,13 @@
 num1 = int(input())
 num2 = int(input())
 
+n1 = num1
+n2 = num2
+
 if num1 > num2:
     max_num = num1
 else:
     max_num = num2
-
-nok = 0
-
-while (True):
-    if (max_num % num1 == 0) and (max_num % num2 == 0):
-        nok = max_num
-        break
-    max_num += 1
 
 while num1 != 0 and num2 != 0:
     if num1 >= num2:
@@ -53,4 +48,4 @@ while num1 != 0 and num2 != 0:
         num2 %= num1
 
 print('НОД введенных чисел:', num1 or num2)
-print('НОК введенных чисел:', nok)
+print('НОК введенных чисел:', int(n1 * n2 / (num1 or num2)))
