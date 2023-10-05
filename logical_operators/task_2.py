@@ -53,14 +53,11 @@ col_1 = int(input())
 row_2 = int(input())
 col_2 = int(input())
 
+dx = abs(row_1 - row_2)
+dy = abs(col_1 - col_2)
 is_not_change_position = row_1 == row_2 and col_1 == col_2
 is_change_position_rook = (row_1 != row_2 and col_2 == col_1) or (row_1 == row_2 and col_2 != col_1)
-is_change_position_horse = ((row_1 + 2 == row_2 and col_1 - 1 == col_2) or
-                            (row_1 + 2 == row_2 and col_1 + 1 == col_2) or
-                            (row_1 + 1 == row_2 and col_1 + 2 == col_2) or
-                            ((row_1 - 1 >= 0 and row_1 - 1 == row_2) and col_1 + 2 == col_2) or
-                            (row_1 + 1 == row_2 and (col_1 - 2 >= 0 and col_1 - 2 == col_2)) or
-                            ((row_1 - 1 >= 0 and row_1 - 1 == row_2) and (col_1 - 2 >= 0 and col_1 - 2 == col_2)))
+is_change_position_horse = (dx == 1 and dy == 2) or (dx == 2 and dy == 1)
 is_change_position_elephant = abs(row_1 - row_2) == abs(col_1 - col_2)
 
 if is_change_position_rook and not is_not_change_position:
