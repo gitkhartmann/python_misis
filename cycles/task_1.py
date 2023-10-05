@@ -43,15 +43,14 @@ while a != 0 and b != 0:
     c = int(input())
 
     if c == 0:
-        if max_2 and min_2:
-            print(min_2, max_2)
-        else:
-            print(min_1, max_1)
+        print(min_1 if min_2 == 0 else min_2, max_1 if max_2 == 0 else max_2)
         break
 
     if c > max_1:
         max_2, max_1 = max_1, c
     elif c < min_1:
+        if max_2 < min_2 < max_1:
+            max_2 = min_2
         min_2, min_1 = min_1, c
     elif min_2 and min_1 < c < min_2:
         min_2 = c
