@@ -31,22 +31,12 @@ num, base = int(input()), int(input())
 curr = ''
 dict = ['A', 'B', 'C', 'D', 'E', 'F']
 
-if base > num:
+while num // base != 0:
     result = num % base
-
     if 10 <= result <= 15:
         result = dict[result % 10]
 
     curr = str(result) + curr
-    print(curr)
+    num = num // base
 
-else:
-    while num // base != 0:
-        result = num % base
-        if 10 <= result <= 15:
-            result = dict[result % 10]
-
-        curr = str(result) + curr
-        num = num // base
-
-        print(str(num) + curr)
+print(str(dict[num % 10] if num > 9 else num) + curr)
