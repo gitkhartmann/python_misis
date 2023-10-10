@@ -32,32 +32,24 @@
 # 10
 # 2
 
-a = int(input())
-b = int(input())
+max_1 = float('-inf')
+max_2 = float('inf')
+min_1 = float('inf')
+min_2 = float('-inf')
 
-max_1, min_1 = max(a, b), min(a, b)
-
-max_2, min_2 = 0, 0
-
-while a != 0 and b != 0:
+while True:
     c = int(input())
 
     if c == 0:
-        print(min_1 if min_2 == 0 else min_2, max_1 if max_2 == 0 else max_2)
+        print(min_2, max_2)
         break
 
     if c > max_1:
         max_2, max_1 = max_1, c
-    elif c < min_1:
-        if max_2 < min_2 < max_1:
-            max_2 = min_2
-        min_2, min_1 = min_1, c
-    elif min_2 and min_1 < c < min_2:
-        min_2 = c
-    elif max_2 and max_2 < c < max_1:
+    elif c > max_2:
         max_2 = c
-    elif min_1 < c < max_1:
-        if min_2 == 0 and max_2 == 0:
-            min_2 = c
-        elif min_2 < c > max_2:
-            max_2 = c
+
+    if c < min_1:
+        min_2, min_1 = min_1, c
+    elif c < min_2:
+        min_2 = c
