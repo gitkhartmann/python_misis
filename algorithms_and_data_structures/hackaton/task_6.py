@@ -10,11 +10,11 @@ try:
 
     cursor = conn.cursor()
 
-    cursor.execute("SELECT email FROM people;")
+    cursor.execute("SELECT phone_number FROM people;")
 
     data = cursor.fetchall()
 
-    data = [n for n, in data if any(ch.isdigit() for ch in n)]
+    data = [n for n, in data if n.startswith('+7')]
     print(len(data))
 
 except:
