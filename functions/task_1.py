@@ -17,4 +17,4 @@
 def compute_m_dist(tuple1, tuple2=(0, 0)):
     x1, y1 = tuple1
     x2, y2 = tuple2
-    return abs((x2 + y2) - (x1 + y1))
+    return abs((x2 - x1)) + abs((y2 - y1))
