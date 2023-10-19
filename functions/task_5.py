@@ -17,7 +17,10 @@
 def is_power(num, d=2):
     if d == 0 or d * d > num:
         return False
-    elif d * d == num:
+    elif d * d == num or d == 1:
         return True
     else:
         return is_power(num / d, d)
+
+
+print(is_power(650, 1))
