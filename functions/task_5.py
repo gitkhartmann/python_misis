@@ -15,12 +15,12 @@
 # is_power(650, 25) -> False
 
 def is_power(num, d=2):
-    if d == 0 or d * d > num:
-        return False
-    elif d * d == num or d == 1:
+    if num == 1:
         return True
+    elif num < d:
+        return False
     else:
         return is_power(num / d, d)
 
 
-print(is_power(650, 1))
+print(is_power(1000, 10))
