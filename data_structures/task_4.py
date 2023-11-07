@@ -91,7 +91,7 @@ else:
         mtrx[k][k] = 0
         diagonal.update(mtrx[k])
 
-    if len(unit) == 1 and 2 in unit:
+    if len(unit) == 1 and 2 in unit and (len(diagonal) == 1 and 0 in diagonal):
         print(result[2])
     elif len(diagonal) == 1 and 0 in diagonal:
         print(result[0])
