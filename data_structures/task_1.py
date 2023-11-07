@@ -28,10 +28,7 @@
 # Слово без встретилось в вашем тексте 1 раз
 # Слово повторов встретилось в вашем тексте 1 раз
 
-import string
-
-phrase = input().translate(
-    str.maketrans('', '', string.punctuation)).split()
+phrase = input().split()
 
 uniq_words = set(phrase)
 
